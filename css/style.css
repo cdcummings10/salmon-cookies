@@ -1,7 +1,43 @@
-ul {
+table {
+  margin: auto;
+  text-align: center;
+  width: 960px;
+  font-family: sans-serif;
+}
+
+table thead tr, tfoot tr {
+  background-color: maroon;
+  color: ivory;
+  font-weight: bold;
+  padding: 20px;
+}
+
+td {
+  padding: 10px;
+}
+
+table tr:hover {
   font-weight: bold;
 }
 
-li {
-  font-weight: normal;
+table tr td:first-child:hover {
+  font-weight: bold;
+}
+
+table tfoot {
+  font-weight: bold;
+}
+
+table tr td:first-child {
+  background-color: maroon;
+  color: ivory;
+  font-weight: bold;
+}
+
+table tbody tr td:nth-of-type(1 + odd) {
+  background-color: beige;
+}
+
+table tbody tr {
+  background-color: bisque;
 }
