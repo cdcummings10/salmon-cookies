@@ -7,7 +7,7 @@ function CookieStore( name, minCust, maxCust, averageCookies ){
   this.averageCookies = averageCookies;
   this.randCookieHourly = [];
   CookieStore.stores.push(this);
-};
+}
 
 CookieStore.stores = [];
 
@@ -119,6 +119,29 @@ for (var i = 0; i < CookieStore.stores.length; i++){
 
 var form = document.getElementById('new_store');
 
+function checkIfNum (input){
+  if(isNaN(input)){
+    alert('Please insert a number for average cookies.');
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+
+function checkIfValid (min, max){
+  if(parseInt(min) > parseInt(max)){
+    alert('Please make sure maximum customers is higher than minimum customers.');
+    return false;
+  }
+  else if (isNaN(min) || isNaN(max)) {
+    alert('Please make sure min and max customers and valid numbers.');
+  }
+  else {
+    return true;
+  }
+}
+
 function submitForm(e){
   e.preventDefault();
   
@@ -126,14 +149,17 @@ function submitForm(e){
   var minCust = e.target.min_cust.value;
   var maxCust = e.target.max_cust.value;
   var avgCookies = e.target.avg_cookies.value;
-  
-  var newStore = new CookieStore(storeName, minCust, maxCust, avgCookies);
-  console.log(CookieStore.stores);
-  form.reset();
-  newStore.render();
-  document.getElementById('totals').firstChild.remove();
-  
-  renderTotals();
+
+  if (checkIfNum(avgCookies) && checkIfValid(minCust, maxCust)){
+    var newStore = new CookieStore(storeName, minCust, maxCust, avgCookies);
+    console.log(CookieStore.stores);
+    form.reset();
+    newStore.render();
+    document.getElementById('totals').firstChild.remove();
+    
+    renderTotals();
+  }
+
 }
 
 form.addEventListener('submit', submitForm);
