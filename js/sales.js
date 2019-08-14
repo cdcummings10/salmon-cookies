@@ -25,6 +25,8 @@ CookieStore.prototype.render = function(){
   elList.appendChild(eltr);
   eltr.appendChild(newTitle);
   eltr.id = this.name;
+
+  var sum = 0;
   for(var i = 0; i < storeHours.length; i++){
     //store random cookies in array
     var cookieHour = this.randCookiesPerHour();
@@ -34,7 +36,11 @@ CookieStore.prototype.render = function(){
     var newListItem = document.createElement('td');
     newListItem.textContent = this.randCookieHourly[i];
     currentStore.appendChild(newListItem);
+    sum += cookieHour;
   }
+  var newTotal = document.createElement('td');
+  newTotal.textContent = sum;
+  eltr.appendChild(newTotal);
 };
 
 new CookieStore('1st and Pike', 23, 65, 6.3);
@@ -56,6 +62,9 @@ function renderHours(){
     newCell.textContent = storeHours[x];
     newBlank.appendChild(newCell);
   }
+  var totals = document.createElement('th');
+  totals.textContent = 'Daily Store Total';
+  newBlank.appendChild(totals);
 }
 // calculate sum of column
 function totalColumn(column){
@@ -65,6 +74,8 @@ function totalColumn(column){
   }
   return sum;
 }
+
+
 function renderTotals() {
   var eltfoot = document.getElementById('totals');
   var totalsText = document.createElement('tr');
@@ -72,11 +83,18 @@ function renderTotals() {
   eltd.textContent = 'Total Daily Sales';
   totalsText.appendChild(eltd);
   eltfoot.appendChild(totalsText);
+
+  var sum = 0;
   for (var k = 0; k < storeHours.length; k++){
     var newTotal = document.createElement('td');
     newTotal.textContent = totalColumn(k) + ' cookies';
     totalsText.appendChild(newTotal);
+    sum += totalColumn(k);
   }
+
+  var grandTotal = document.createElement('td');
+  grandTotal.textContent = sum + ' cookies';
+  totalsText.appendChild(grandTotal);
 }
 
 renderHours();
