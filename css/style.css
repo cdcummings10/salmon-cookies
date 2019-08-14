@@ -1,0 +1,77 @@
+h1 {
+  color: ivory;
+  font-size: 5em;
+  font-family: sans-serif;
+  background-color: maroon;
+  padding: 60px;
+  text-align: center;
+}
+h2 {
+  color: ivory;
+  font-size: 5em;
+  font-family: sans-serif;
+  background-color: maroon;
+  padding: 60px;
+  text-align: center;
+}
+
+img {
+  margin: auto;
+  width: 70%;
+  max-width: 700px;
+  display: block;
+}
+nav ul li{
+  display: inline-block;
+  border: 3px solid #010101;
+  font-size: 1.5em;
+  padding: .5em 1em;
+}
+
+
+
+td, th {
+  position: relative;
+}
+
+tbody tr:hover {
+  background-color: salmon;
+}
+
+table {
+  margin: auto;
+  text-align: center;
+  width: 90%;
+  font-family: sans-serif;
+  border: 3px #010101 solid;
+  background-color: bisque;
+  overflow: hidden;
+}
+
+table thead tr, tfoot tr {
+  background-color: maroon;
+  color: ivory;
+  font-weight: bold;
+  padding: 20px;
+  overflow: scroll;
+}
+
+
+td, th{
+  padding: 10px;
+}
+
+table tfoot {
+  font-weight: bold;
+}
+
+table tr td:first-child, table tr td:last-child {
+  background-color: maroon;
+  color: ivory;
+  font-weight: bold;
+  width: 25%;
+}
+
+table tr td:first-child, th, tfoot td, table tr td:last-child {
+  border: 3px #010101 solid;
+}
