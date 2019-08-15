@@ -21,13 +21,32 @@ img {
   max-width: 700px;
   display: block;
 }
-nav ul li{
+nav ul li {
   display: inline-block;
   border: 3px solid #010101;
   font-size: 1.5em;
   padding: .5em 1em;
+  margin: 10px;
 }
 
+nav ul li a {
+  color: ivory;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: ivory;
+  top: auto;
+  left: auto;
+  border-radius: auto;
+}
+
+nav {
+  display: block;
+  background-color: maroon;
+}
 
 
 td, th {
@@ -75,3 +94,16 @@ table tr td:first-child, table tr td:last-child {
 table tr td:first-child, th, tfoot td, table tr td:last-child {
   border: 3px #010101 solid;
 }
+
+form {
+  margin: 15px;
+}
+form label {
+  margin: 0px 5px;
+  font-weight: bold;
+  width: 20px;
+}
+
+/* td:nth-child(even){
+  background-color: beige;
+} */
