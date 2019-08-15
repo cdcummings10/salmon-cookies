@@ -5,6 +5,7 @@ h1 {
   background-color: maroon;
   padding: 60px;
   text-align: center;
+  width: 100%;
 }
 h2 {
   color: ivory;
@@ -22,7 +23,6 @@ img {
   display: block;
 }
 nav ul li {
-  display: inline-block;
   border: 3px solid #010101;
   font-size: 1.5em;
   padding: .5em 1em;
@@ -44,10 +44,41 @@ nav ul li a:hover {
 }
 
 nav {
-  display: block;
+  position: fixed;
+  float: left;
   background-color: maroon;
+  transition: 1s all;
+  margin: 0 0 0 -250px;
+  z-index: 2;
 }
 
+nav:hover {
+  margin: 0;
+}
+
+#navtitle {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: -80px;
+  background-color: maroon;
+  color: ivory;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+/* from css-tricks.com */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#right_bar {
+  float: right;
+  background-color: maroon;
+  height: 1500px;
+  width: 200px
+}
 
 td, th {
   position: relative;
@@ -58,7 +89,7 @@ tbody tr:hover {
 }
 
 table {
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
   width: 90%;
   font-family: sans-serif;
@@ -107,3 +138,86 @@ form label {
 /* td:nth-child(even){
   background-color: beige;
 } */
+
+#salesmain {
+  width: auto;
+}
+
+main {
+  font-family: sans-serif;
+  width: 960px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 3.5em;
+  margin: 10px auto;
+  text-align: center;
+}
+
+h5 {
+  float: left;
+  font-size: 1.5em;
+  margin: 50px 20px 0 20px;
+}
+
+ul {
+  float: left;
+  margin: 0 20px;
+  list-style-type: circle;
+}
+
+ul li {
+  margin:  20px 0 0 20px;
+}
+
+#frosted {
+  width: 50%;
+  float: left;
+}
+
+p {
+  margin: 30px;
+}
+
+body {
+  background: beige;
+}
+
+#second_p {
+  float: left;
+  width: 400px;
+}
+
+#family {
+  float: left;
+  width: 50%;
+  margin: 30px 0;
+}
+
+#buy_merch h5 {
+  font-size: 2em;
+  display: block;
+  float:none;
+  text-align: center;
+}
+
+#buy_merch img {
+  width: 45%;
+  float: left;
+  margin: 15px;
+}
+
+#jokes{
+  position: relative;
+}
+
+#jokes img {
+  width: 20%;
+}
+
+h6 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 10px;
+}

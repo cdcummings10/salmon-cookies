@@ -10,3 +10,7 @@ Created constructor function for stores.
 Changed lists to tables in JS.
 Moved all code into functions.
 Added some CSS.
+
+v3 additons:
+Added CSS to index as well as sales page.
+Updated index with text and images provided by client.
